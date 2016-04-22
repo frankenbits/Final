@@ -30,6 +30,7 @@ function preload() {
     lightoblique = loadFont("Fonts/Avenir/Avenir-LightOblique.ttf");
     
     img = loadImage("clouds.png");
+    img2 = loadImage("clouds2.png");
 }
 
 //------------------SETUP------------------------------------------//
@@ -47,8 +48,7 @@ function setup() {
     attractorsInvestors.push(new Attractor(createVector(width / 2 - 55, 130), 2));
 
     attractorsInvestors.push(new Attractor(createVector(width / 2 + 185, 130), 2));
-    
-    //attractorsInvestors.push(new Attractor(createVector(width/ 2 + 50, 200), 1));
+
 
     //aggregates companies into the object aggregated
     for (var r = 0; r < table.getRowCount(); r++) {
@@ -282,7 +282,7 @@ var Attractor = function (pos, s) {
 
     this.draw = function () {
         noStroke();
-        fill(0, 100, 100);
+        fill(0, 0, 0, 0);
         ellipse(this.pos.x, this.pos.y
             , strength, strength);
     }
@@ -464,6 +464,11 @@ function iText(){
         colorMode(RGB, 255, 255, 255);
         tint(255, 128);
         image(img, width/4 + width/2, height/10, img.width / 5, img.height / 5);
+        
+        imageMode(LEFT);
+        colorMode(RGB, 255, 255, 255);
+        tint(255, 128);
+        image(img2, width/3, height/11, img.width/5.8, img.height/5.8);
         
     }
 }
